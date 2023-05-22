@@ -1,43 +1,65 @@
-let theForm = document.querySelector('.form');
-let submitButton = document.querySelector('.submit');
+// create array
+const array = [];
+//console.log(array);
+let form = document.querySelector('#form');
+//let submit = document.querySelector('#submit');
 
+//create a constructor
+function StudentSignUp (firstname,lastname,email,age,sex,city,tel,password) {
+  this.firstname = firstname
+  this.lastname = lastname
+  this.email = email 
+  this.age = age
+  this.sex = sex 
+  this.city = city
+  this.tel = tel 
+  this.password = password
+} 
+const studentData = () => {
+  const fname = document.querySelector('#firstname').value;
+  const lname = document.querySelector('#lastname').value;
+  const email = document.querySelector('#email').value;
+  const age = document.querySelector('#age').value;
+  const sex = document.querySelector('#sex').value;
+  const city = document.querySelector('#city').value;
+  const tel = document.querySelector('#tel').value;
+  const password = document.querySelector('#password').value;
 
-//create a function to redirect the user after the form has been filled
-function goToContactPage(event) {
-  event.preventDefault()
-  let firstInput = document.querySelector('.fname').value.toUpperCase();
-  let secondInput = document.querySelector('.lname').value.toUpperCase();
-  let thirdInput = document.querySelector('.email').value.toUpperCase();
-  let forthInput = document.querySelector('.number').value;
-  let fifthInput = document.querySelector('.sex').value.toUpperCase();
-  let sixthInput = document.querySelector('.city').value.toUpperCase();
-  let seventhInput = document.querySelector('.tel').value;
-  let eighthInput = document.querySelector('.password').value;
+  const signee1 = new StudentSignUp (fname,lname,email,age,sex,city,tel,password)
+  return signee1;
 
-  //create an object to store the information to be imputed by the user
-  const formData = {
-    firstName: firstInput,
-    lastName: secondInput,
-    email: thirdInput,
-    age: forthInput,
-    sex: fifthInput,
-    city: sixthInput,
-    tel: seventhInput,
-    password: eighthInput
-  };
-
-  //perform form validation
-  if (firstInput === formData.firstName && secondInput === formData.lastName && thirdInput === formData.email && forthInput === formData.age && fifthInput === formData.sex && sixthInput === formData.city && seventhInput === formData.tel && eighthInput === formData.password) {
-    //redirect user to another window after successfully filling the forms
-    setTimeout(function () {
-      window.location.href = 'contactPage.html';
-    }, 3000);
-    return;
+}
+function storeData(signee1) {
+  // check if local storage is empty
+  if (localStorage.getItem('contactData') === null) {
+      // add data to local storage
+      localStorage.setItem('contactData', JSON.stringify(array));
   } else {
-    alert('Please fill in the required fields');
+      // get data from local storage2
+      const contactData = JSON.parse(localStorage.getItem('contactData'));
+      // add data to local storage
+      array.push(signee1);
+      // console.log(array)
+      localStorage.setItem('contactData', JSON.stringify(contactData));
   }
 }
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const newSignee = studentData()
+  array.push(newSignee);
+  // store data in local storage
+  storeData(newSignee);
+  console.log(array);
+  // function to clear form
+  form.reset();
+});
 
-//add the function to the submit button 
-// submitButton.addEventListener('click', goToContactPage);
-theForm.addEventListener('onSubmit', () => console.log('form submission'));
+// submit.addEventListener('click',(studentData) => {
+// //  alert('Thank')
+
+// })
+
+
+
+
+

@@ -18,14 +18,15 @@
   font-size: 34px;
 }
 
-.fname,
-.lname,
-.email,
-.number,
-.sex,
-.city,
-.tel,
-.password {
+#firstname,
+#lastname,
+#age,
+#email,
+#number,
+#sex,
+#city,
+#tel,
+#password {
   background: #1ff2;
   padding: 10px 17px;
   border: none;
@@ -36,9 +37,9 @@
   margin-top: 4px;
 }
 
-.submit {
+#submit {
   background: #1ff2;
-  width: 499px;
+  width: 445px;
   margin-top: 4px;
   border: none;
   font-weight: bold;
