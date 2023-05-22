@@ -13,12 +13,12 @@
 
 .sign-up,
 .login {
-  background: rgb(55, 55, 218);
+  background: #1ff2;
   border: none;
   padding: 8px 15px;
   font-weight: bold;
   font-size: 18px;
-  color: #fff;
+  color: #dadadb;
   border-radius: 4px;
   cursor: pointer;
   position: relative;
@@ -40,7 +40,7 @@
 }
 
 .a-user {
-  color: #fff;
+  color: #dadadb;
   font-weight: bold;
   font-size: 18px;
   position: relative;

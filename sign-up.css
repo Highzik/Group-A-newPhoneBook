@@ -12,7 +12,7 @@
 }
 
 .text {
-  color: #fff;
+  color: #dadadb81;
   font-weight: bold;
   text-align: center;
   font-size: 34px;
@@ -26,26 +26,26 @@
 .city,
 .tel,
 .password {
-  background: rgb(55, 55, 218);
+  background: #1ff2;
   padding: 10px 17px;
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: #dadadb81;
   font-weight: bold;
   font-size: 16px;
   margin-top: 4px;
 }
 
 .submit {
-  background: rgb(55, 55, 218);
+  background: #1ff2;
   width: 499px;
   margin-top: 4px;
   border: none;
   font-weight: bold;
-  color: #fff;
+  color: #dadadb81;
   padding: 10px 17px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
 }
 
